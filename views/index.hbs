@@ -1,2 +1,21 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+
+{{#if isUserLoggedIn }}
+<p> Hello, {{ currentUserInfo.name }}. </p>
+{{/if}}
+<nav>
+  <ul>
+    {{#if isUserLoggedIn }}
+    <li>
+      <a href="auth/logout"> Log Out </a>
+    </li>
+    {{else}}
+    <img class ="portada" src="/images/portada.png" alt="imagendeportada">
+    <h1> {{ title }} </h1>
+    <p>Estas buscando un Chino abierto en mitad de la noche esta es tu app</p>
+
+     <h2><a href="auth/signup"> Registrate Aquí</a></h2> 
+      <a href="auth/login"> Inicia sesion </a>
+    {{/if}}
+  </ul>
+</nav>

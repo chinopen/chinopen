@@ -1,0 +1,30 @@
+<h2> Inicia Sesion </h2>
+
+{{#if errorMessage}}
+  <p class="error-message">
+    {{ errorMessage }}
+  </p>
+{{/if}}
+
+<form action="/auth/login" method="post">
+  <div>
+    {{!-- <label for="email-input"> Email </label> --}}
+    <input type="email" name="email" id="email-input"
+      placeholder="email">
+  </div>
+
+  <div>
+    {{!-- <label for="password-input"> Password </label> --}}
+    <input type="password" name="password" id="password-input"
+      placeholder="password">
+  </div>
+
+  <button> Inicia Sesión </button>
+</form>
+
+<p>
+  ¿Todavia no tienes cuenta?
+  <a href="/auth/signup">
+    Registrate aqui.
+  </a>
+</p>
