@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+
+
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
@@ -14,7 +16,9 @@ const MongoStore = require("connect-mongo")(session);
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(dbURL, { useMongoClient: true })
+  .connect(dbURL, {
+    useMongoClient: true
+  })
   .then(() => {
     console.log("Connected to Mongo!");
   })
@@ -32,7 +36,9 @@ const app = express();
 // Middleware Setup
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
@@ -40,7 +46,9 @@ app.use(
     secret: "bellor",
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 60 * 60 * 24 * 2 * 1000 }, //2 days
+    cookie: {
+      maxAge: 60 * 60 * 24 * 2 * 1000
+    }, //2 days
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
       ttl: 24 * 60 * 60 * 2 * 1000 // 2 day
