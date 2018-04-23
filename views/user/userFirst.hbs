@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <h2>Si lo prefieres haz tu busqueda aqui</h2>
 
@@ -13,3 +14,17 @@
 
 
  <a href="/">Log out</a>
+=======
+{{#if isUserLoggedIn }}
+<h2> Hello, {{ currentUserInfo.username }}. </h2>
+<br>
+{{/if}}<H1>Find your Shop!</H1>
+<br>
+<div id="map"></div>
+<script src='/javascripts/script.js' />
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=API_KEY_GOOGLE_MAP&callback=initMap">
+    </script>
+
+    
+>>>>>>> bee2e9ee6c6c14f9e629e8c32603ac9522915976
