@@ -9,3 +9,5 @@ router.get("/userFirst", (req, res, next) => {
       errorMessage: ""
     });
   });
+
+  module.exports = router;
