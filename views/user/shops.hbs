@@ -1,0 +1,32 @@
+<h2> Shop Profile </h2>
+
+<h3> {{ user.username }} </h3>
+
+<p>
+  Horario:
+  <b> {{ user.open }}":"{{ user.close }}  </b>
+</p>
+
+
+<h3>
+Go to
+  <i> {{ user.username }} </i>
+</h3>
+
+<form action="/ranking" method="post">
+  <div>
+    <label for="ranking">
+      What Rating does {{ user.username }} deserve?
+    </label>
+    <input type="number" name="ranking" id="ranking">
+  </div>
+
+  <input type="hidden" name="userId" value="{{ user.user_id }}">
+
+  <button> go to </button>
+</form>
+
+
+<a href="/userFirst">
+  Find Another Launderer
+</a>

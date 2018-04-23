@@ -10,4 +10,11 @@ router.get("/userFirst", (req, res, next) => {
     });
   });
 
+  router.get("/shops", (req, res, next) => {
+    res.render("user/shops", {
+      errorMessage: ""
+    });
+  });
+
+
   module.exports = router;
