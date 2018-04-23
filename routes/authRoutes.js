@@ -13,7 +13,7 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
-  const usernameInput = req.body.name;
+  const usernameInput = req.body.username;
   const emailInput = req.body.email;
   const passwordInput = req.body.password;
 
@@ -50,6 +50,7 @@ router.post("/signup", (req, res, next) => {
 
     theUser.save(err => {
       if (err) {
+        console.log(err)
         res.render("auth/signup", {
           errorMessage: "Something went wrong. Try again later."
         });

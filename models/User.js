@@ -6,13 +6,16 @@ const userSchema = new Schema({
   email: String,
   password: String,
   isShop: { type: Boolean, default: false },
-  //location: { type: { type: String }, coordinates: [Number] },
+  loc: { type: {type: String }, coordinates: [Number]},
   open: { type: String, default: null },
-  close: { type: String, default: null },
+  close: { type: String, default: null }
 });
+
 userSchema.index({ location: "2dsphere" });
 userSchema.set('timestamps', true);
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
+
+
