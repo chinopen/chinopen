@@ -7,8 +7,8 @@ const userSchema = new Schema({
   password: String,
   location: { type: { type: String }, coordinates: [Number] },
   isShop: { type: Boolean, default: false },
-  //open: {type: Date , default:},
-  //close: {type: Date , default:}
+  open: String,
+  close: String
 });
 userSchema.index({ location: "2dsphere" });
 userSchema.set('timestamps', true);
