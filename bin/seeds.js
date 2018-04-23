@@ -12,7 +12,7 @@ mongoose
    return User.create([
       {
         username: "Chin Hun Huai",
-        email: "String@m.com",
+        email: "Chin@m.com",
         password: "a",
         isShop: true,
         loc: {
@@ -21,7 +21,113 @@ mongoose
         },
         open: "08:00",
         close: "24:00"
-      }
+      },
+
+      {
+        username: "Su San A",
+        email: "Su@m.com",
+        password: "a",
+        isShop: true,
+        loc: {
+            type : "Point",
+            coordinates: [40.424453, -3.713784]
+        },
+        open: "08:00",
+        close: "22:00"
+      },
+      
+      {
+        username: "Sao Chin Huan",
+        email: "Sao@m.com",
+        password: "a",
+        isShop: true,
+        loc: {
+            type : "Point",
+            coordinates: [40.400073,-3.705990]
+        },
+        open: "08:00",
+        close: "23:00"
+      },
+      
+      {
+        username: "Uan Tchu Fri",
+        email: "Uan@m.com",
+        password: "a",
+        isShop: true,
+        loc: {
+            type : "Point",
+            coordinates: [40.397757, -3.701784]
+        },
+        open: "08:00",
+        close: "23:00"
+      },
+      
+      {
+        username: "Fol Fai Six",
+        email: "Fol@m.com",
+        password: "a",
+        isShop: true,
+        loc: {
+            type : "Point",
+            coordinates: [40.398737, -3.699081]
+        },
+        open: "08:00",
+        close: "24:00"
+      },  
+      {
+        username: "Hai Zen Chiu",
+        email: "Hai@m.com",
+        password: "a",
+        isShop: true,
+        loc: {
+            type : "Point",
+            coordinates: [40.397257, -3.700531]
+        },
+        open: "08:00",
+        close: "23:30"
+      },
+  
+      {
+        username: "Gi Hol Gio",
+        email: "Giholgio@m.com",
+        password: "a",
+        isShop: true,
+        loc: {
+            type : "Point",
+            coordinates: [40.394836, -3.709621]
+        },
+        open: "08:00",
+        close: "23:30"
+      },  
+      {
+        username: "Vi Hct Hol",
+        email: "Victol@m.com",
+        password: "a",
+        isShop: true,
+        loc: {
+            type : "Point",
+            coordinates: [40.392021, -3.702353]
+        },
+        open: "08:00",
+        close: "24:00"
+      },
+
+  
+      {
+        username: "Bel Te Lan",
+        email: "Beltelan@m.com",
+        password: "a",
+        isShop: true,
+        loc: {
+            type : "Point",
+            coordinates: [40.398699, -3.707353]
+        },
+        open: "08:00",
+        close: "22:00"
+      },
+
+
+      
     ]);
   })
   .then(() => mongoose.disconnect())
