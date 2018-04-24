@@ -18,6 +18,7 @@ mongoose
         email: "Chin@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
+        isCoords: true,
         loc: {
             type : "Point",
             coordinates: [40.393226, -3.697712]
@@ -31,6 +32,7 @@ mongoose
         email: "Su@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
+        isCoords: true,
         loc: {
             type : "Point",
             coordinates: [40.404453, -3.713784]
@@ -44,6 +46,7 @@ mongoose
         email: "Sao@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
+        isCoords: true,
         loc: {
             type : "Point",
             coordinates: [40.400073,-3.705990]
@@ -57,6 +60,7 @@ mongoose
         email: "Uan@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
+        isCoords: true,
         loc: {
             type : "Point",
             coordinates: [40.397757, -3.701784]
@@ -70,6 +74,7 @@ mongoose
         email: "Fol@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
+        isCoords: true,
         loc: {
             type : "Point",
             coordinates: [40.398737, -3.699081]
@@ -82,6 +87,7 @@ mongoose
         email: "Hai@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
+        isCoords: true,
         loc: {
             type : "Point",
             coordinates: [40.397257, -3.700531]
@@ -95,6 +101,7 @@ mongoose
         email: "Giholgio@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
+        isCoords: true,
         loc: {
             type : "Point",
             coordinates: [40.394836, -3.709621]
@@ -107,6 +114,7 @@ mongoose
         email: "Victol@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
+        isCoords: true,
         loc: {
             type : "Point",
             coordinates: [40.392021, -3.702353]
@@ -121,6 +129,7 @@ mongoose
         email: "Beltelan@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
+        isCoords: true,
         loc: {
             type : "Point",
             coordinates: [40.398699, -3.707353]

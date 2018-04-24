@@ -50,7 +50,7 @@ const router = express.Router();
     })
   })
   router.get('/userFirst', (req, res, next) => {
-    User.find({isShop:true}).then( (users)  => {
+    User.find({isCoords:true}).then( (users)  => {
       res.render("user/userFirst",{users:JSON.stringify(users)});
     })
   });
@@ -69,6 +69,7 @@ const router = express.Router();
 
   router.post("/addAddress", (req, res, next) =>{ 
     const address = req.body.direccion;
+    
     let lat;
     let lng;
     googleMapsClient.geocode({address})
@@ -77,10 +78,11 @@ const router = express.Router();
         lat = data.json.results[0].geometry.viewport.northeast.lat;
         lng = data.json.results[0].geometry.viewport.northeast.lng;
         const userId = req.session.currentUser._id;
-        const update = { loc: { coordinates: [lat, lng] } }
+        const update = { loc: { coordinates: [lat, lng] }, isCoords: true }
         // User.findOne({ _id: userId})
         User.findByIdAndUpdate(userId, update)
         .then(user => {
+
           res.redirect("/user/userFirst")
         })
     })
