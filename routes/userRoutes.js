@@ -91,6 +91,14 @@ const router = express.Router();
     })
 })
 
+router.get("/place/:id",(req, res,next) => {
+  user.findById(req.params.id)
+  .then (place => {
+   res.render("profile", place)
+   
+  })
+})
+
 
 
   module.exports = router;
