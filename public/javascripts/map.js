@@ -1,4 +1,3 @@
-
 console.log('IronGenerator JS imported successfully!');
 
 function initMap() {
@@ -9,34 +8,44 @@ function initMap() {
     },
     zoom: 8
   });
-  
-  //Marks 
-  
-    
-      let bounds = new google.maps.LatLngBounds();
-      let changedUse = window.users.map(use => {
-        
-      let mappeduse = {
-        name:use.name,
-        pos: {
-          lat: use.loc.coordinates[0],
-          lng: use.loc.coordinates[1]
-        }
-      }
-      bounds.extend(mappeduse.pos);
-      return mappeduse;
-    })
-    map.fitBounds(bounds);
-  
-    changedUse.forEach(use => {
-      new google.maps.Marker({
-        position: use.pos,
-        map: map,
-        title: use.name
-      });
-    })
 
-    
+  //Marks 
+  let bounds = new google.maps.LatLngBounds();
+  let changedUse = window.users.map(use => {
+
+    let mappeduse = {
+      name: use.username,
+      pos: {
+        lat: use.loc.coordinates[0],
+        lng: use.loc.coordinates[1]
+      },
+      open: use.open,
+      id: use._id,
+      close: use.close
+
+    }
+    //console.log(use.username)
+    bounds.extend(mappeduse.pos);
+    return mappeduse;
+  })
+  map.fitBounds(bounds);
+
+  changedUse.forEach(use => {
+    let infowindow = new google.maps.InfoWindow({
+
+      content: `<h3>${use.name}</h3><br><p>Open:${use.open}</p><br><p>Close:${use.close}</p><br><a href="place/${use.id}">Ir a la tienda</a>`,
+
+    })
+    console.log(use)
+    let marker = new google.maps.Marker({
+      position: use.pos,
+      map: map,
+      title: use.name
+    });
+    marker.addListener('click', function () {
+      infowindow.open(map, marker);
+    });
+  })
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
@@ -56,9 +65,10 @@ function initMap() {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
+
+
 }
 
-initMap();
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
