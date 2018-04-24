@@ -1,10 +1,11 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
-
 const User = require("../models/user");
 
 const router = express.Router();
 const bcryptSalt = 10;
+
+
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup", {
@@ -16,6 +17,8 @@ router.post("/signup", (req, res, next) => {
   const usernameInput = req.body.username;
   const emailInput = req.body.email;
   const passwordInput = req.body.password;
+  
+    
 
   if (emailInput === "" || passwordInput === "") {
     res.render("auth/signup", {
@@ -43,7 +46,8 @@ router.post("/signup", (req, res, next) => {
     const userSubmission = {
       username: usernameInput,
       email: emailInput,
-      password: hashedPass
+      password: hashedPass,
+      
     };
 
     const theUser = new User(userSubmission);
@@ -60,8 +64,7 @@ router.post("/signup", (req, res, next) => {
       res.redirect("/user/userFirst");
     });
   });
-});
-
+}); 
 
 
 

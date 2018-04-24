@@ -2,14 +2,12 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const salt = 10;
 const User = require("../models/user");
+const googleMapsClient = require("@google/maps").createClient({
+  key: "AIzaSyDlSmRpGl2kaSE2_ZK-5X6OiA5942IFepI",
+  Promise: Promise
+});
 
 const router = express.Router();
-
-// router.get("/userFirst", (req, res, next) => {
-//     res.render("user/userFirst", {
-//       errorMessage: ""
-//     });
-//   });
 
   router.get("/shops", (req, res, next) => {
     res.render("user/shops", {
@@ -23,9 +21,7 @@ const router = express.Router();
     const update = {password:pass}
     User.findByIdAndUpdate(userId,update)
     .then(user=>{
-      console.log(user.password)
       user.password = pass;
-      console.log(user.password)
             res.redirect('/');            
     })
   })
@@ -37,9 +33,7 @@ const router = express.Router();
     const update = {username:name}
     User.findByIdAndUpdate(userId,update)
     .then(user=>{
-      console.log(user.username)
       user.username = name;
-      console.log(user.username)
             res.redirect('/');            
     })
   })
@@ -51,16 +45,12 @@ const router = express.Router();
     const update = {open:time}
     User.findByIdAndUpdate(userId,update)
     .then(user=>{
-      console.log(user.open)
       user.open = time;
-      console.log(user.open)
             res.redirect('/');            
     })
   })
   router.get('/userFirst', (req, res, next) => {
-    console.log('entra')
-    User.find().then( (users)  => {
-      console.log(users);
+    User.find({isShop:true}).then( (users)  => {
       res.render("user/userFirst",{users:JSON.stringify(users)});
     })
   });
@@ -72,11 +62,33 @@ const router = express.Router();
     const update = {close:time}
     User.findByIdAndUpdate(userId,update)
     .then(user=>{
-      console.log(user.close)
       user.close = time;
-      console.log(user.close)
             res.redirect('/');            
     })
   })
+
+  router.post("/addAddress", (req, res, next) =>{ 
+    const address = req.body.direccion;
+    let lat;
+    let lng;
+    googleMapsClient.geocode({address})
+    .asPromise()
+    .then(data => {
+        lat = data.json.results[0].geometry.viewport.northeast.lat;
+        lng = data.json.results[0].geometry.viewport.northeast.lng;
+        const userId = req.session.currentUser._id;
+        const update = { loc: { coordinates: [lat, lng] } }
+        // User.findOne({ _id: userId})
+        User.findByIdAndUpdate(userId, update)
+        .then(user => {
+          res.redirect("/user/userFirst")
+        })
+    })
+    .catch(error => {
+      console.log(error)
+    })
+})
+
+
 
   module.exports = router;
