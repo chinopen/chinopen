@@ -7,7 +7,7 @@ function initMap() {
       lat: 40.392513,
       lng: -3.698211
     },
-    zoom: 15
+    zoom: 8
   });
   
   //Marks 
@@ -15,6 +15,7 @@ function initMap() {
     
       let bounds = new google.maps.LatLngBounds();
       let changedUse = window.users.map(use => {
+        
       let mappeduse = {
         name:use.name,
         pos: {
