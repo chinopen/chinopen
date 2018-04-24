@@ -16,6 +16,7 @@ router.post("/signup", (req, res, next) => {
   const usernameInput = req.body.username;
   const emailInput = req.body.email;
   const passwordInput = req.body.password;
+  const ShopInput = req.body.shop;
 
   if (emailInput === "" || passwordInput === "") {
     res.render("auth/signup", {
@@ -43,7 +44,8 @@ router.post("/signup", (req, res, next) => {
     const userSubmission = {
       username: usernameInput,
       email: emailInput,
-      password: hashedPass
+      password: hashedPass,
+      isShop:ShopInput
     };
 
     const theUser = new User(userSubmission);
