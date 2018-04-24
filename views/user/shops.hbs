@@ -1,32 +1,47 @@
-<h2> Shop Profile </h2>
+{{#if isUserLoggedIn }}
+<h1> Welcome to SHOPS, {{ currentUserInfo.username }}. </h1>
+{{/if}}
 
-<h3> {{ user.username }} </h3>
+<nav>
+  <ul>
+    {{#if isUserLoggedIn }}
 
-<p>
-  Horario:
-  <b> {{ user.open }}":"{{ user.close }}  </b>
-</p>
-
-
-<h3>
-Go to
-  <i> {{ user.username }} </i>
-</h3>
-
-<form action="/ranking" method="post">
-  <div>
-    <label for="ranking">
-      What Rating does {{ user.username }} deserve?
-    </label>
-    <input type="number" name="ranking" id="ranking">
-  </div>
-
-  <input type="hidden" name="userId" value="{{ user.user_id }}">
-
-  <button> go to </button>
+<form action="/user/changePass" method="post">
+      <button> Change your Password</button>
+    <input type="text" name="password" id="change-password"
+      placeholder="New Password"> 
+</form>
+<br>
+<form action="/user/changeName" method="post">
+      <button> Change your User Name</button>
+    <input type="text" name="username" id="change-username"
+      placeholder="New Username"> 
+</form>
+ <br>
 </form>
 
+    {{else}}
+   
+    {{/if}}
+  </ul>
+</nav>
 
-<a href="/userFirst">
-  Find Another Launderer
-</a>
+{{#if currentUserInfo.isShop }}
+
+<form action="/user/changeOpen" method="post">
+ <button> Whant to change your Opening Time?</button>
+    <input type="text" name="open" id="change-open"
+      placeholder="Ej: 08:00"> 
+</form>
+<form action="/user/changeClose" method="post">
+<button> Whant to change your Closing Time?</button>
+    <input type="text" name="close" id="change-close"
+      placeholder="Ej: 24:00"> 
+      
+      <br>
+Hola Shop
+
+{{/if}}
+<br>
+<br>
+      <a href="/auth/logout"> Log Out </a>
