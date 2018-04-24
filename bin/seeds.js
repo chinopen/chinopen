@@ -14,13 +14,13 @@ mongoose
     //const hashedPass = bcrypt.hashSync(password, salt);
    return User.create([
       {
-        username: "Chin Hun Huai",
+        username: "Chino al lado de IH",
         email: "Chin@m.com",
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         loc: {
             type : "Point",
-            coordinates: [40.4095426, -3.6927179]
+            coordinates: [40.393226, -3.697712]
         },
         open: "08:00",
         close: "24:00"
@@ -33,7 +33,7 @@ mongoose
         isShop: true,
         loc: {
             type : "Point",
-            coordinates: [40.424453, -3.713784]
+            coordinates: [40.404453, -3.713784]
         },
         open: "08:00",
         close: "22:00"
