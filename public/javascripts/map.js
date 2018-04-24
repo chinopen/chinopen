@@ -2,7 +2,6 @@
 console.log('IronGenerator JS imported successfully!');
 
 function initMap() {
-   console.log (window.users)
   const map = new google.maps.Map(document.getElementById("map"), {
     center: {
       lat: 40.392513,
@@ -16,7 +15,6 @@ function initMap() {
     
       let bounds = new google.maps.LatLngBounds();
       let changedUse = window.users.map(use => {
-      console.log(use.loc.coordinates)
       let mappeduse = {
         name:use.name,
         pos: {

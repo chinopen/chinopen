@@ -6,42 +6,40 @@
   <ul>
     {{#if isUserLoggedIn }}
 
-<form action="/user/changePass" method="post">
+    <form action="/user/changePass" method="post">
       <button> Change your Password</button>
-    <input type="text" name="password" id="change-password"
-      placeholder="New Password"> 
-</form>
-<br>
-<form action="/user/changeName" method="post">
+      <input type="text" name="password" id="change-password" placeholder="New Password">
+    </form>
+    <br>
+    <form action="/user/changeName" method="post">
       <button> Change your User Name</button>
-    <input type="text" name="username" id="change-username"
-      placeholder="New Username"> 
-</form>
- <br>
-</form>
+      <input type="text" name="username" id="change-username" placeholder="New Username">
+    </form>
+    <br>
+    </form>
 
-    {{else}}
-   
-    {{/if}}
+    {{else}} {{/if}}
   </ul>
 </nav>
 
 {{#if currentUserInfo.isShop }}
 
 <form action="/user/changeOpen" method="post">
- <button> Whant to change your Opening Time?</button>
-    <input type="text" name="open" id="change-open"
-      placeholder="Ej: 08:00"> 
+  <button> Whant to change your Opening Time?</button>
+  <input type="text" name="open" id="change-open" placeholder="Ej: 08:00">
 </form>
 <form action="/user/changeClose" method="post">
-<button> Whant to change your Closing Time?</button>
-    <input type="text" name="close" id="change-close"
-      placeholder="Ej: 24:00"> 
-      
-      <br>
-Hola Shop
-
-{{/if}}
+  <button> Whant to change your Closing Time?</button>
+  <input type="text" name="close" id="change-close" placeholder="Ej: 24:00">
+</form>
 <br>
 <br>
-      <a href="/auth/logout"> Log Out </a>
+<form action="/user/addAddress" method="post">
+  <input type="text" name="direccion" id="direccion-input" placeholder="direccion">
+  <button> Guardar Direccion </button>
+</form>
+</div>
+------Hola Shop------- {{/if}}
+<br>
+<br>
+<a href="/auth/logout"> Log Out </a>
