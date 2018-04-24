@@ -1,47 +1,56 @@
-{{#if isUserLoggedIn }}
-<h1> Welcome to SHOPS, {{ currentUserInfo.username }}. </h1>
-{{/if}}
+<div class="row titulo">
 
-<nav>
-  <ul>
+  <div class="col-md-12">
     {{#if isUserLoggedIn }}
+    <h1> Welcome to your Profile, {{ currentUserInfo.username }}. </h1>
+    {{/if}}
 
-    <form action="/user/changePass" method="post">
-      <button> Change your Password</button>
-      <input type="text" name="password" id="change-password" placeholder="New Password">
+    <nav>
+      <ul>
+        {{#if isUserLoggedIn }}
+
+        <form action="/user/changePass" method="post">
+          <button class="crea"> Change your Password</button>
+          <input type="text" name="password" id="change-password" placeholder="New Password">
+        </form>
+        <br>
+        <form action="/user/changeName" method="post">
+          <button class="crea"> Change your User Name</button>
+          <input type="text" name="username" id="change-username" placeholder="New Username">
+        </form>
+        <br>
+        </form>
+
+        {{else}} {{/if}}
+      </ul>
+    </nav>
+
+    {{#if currentUserInfo.isShop }}
+
+    <form action="/user/changeOpen" method="post">
+      <button class="crea"> Want to change your Opening Time?</button>
+      <input type="text" name="open" id="change-open" placeholder="Ej: 08:00">
+    </form>
+    <form action="/user/changeClose" method="post">
+      <button class="crea"> Want to change your Closing Time?</button>
+      <input type="text" name="close" id="change-close" placeholder="Ej: 24:00">
     </form>
     <br>
-    <form action="/user/changeName" method="post">
-      <button> Change your User Name</button>
-      <input type="text" name="username" id="change-username" placeholder="New Username">
-    </form>
     <br>
+    <form action="/user/addAddress" method="post">
+      <input type="text" name="direccion" id="direccion-input" placeholder="direccion">
+      <button class="crea"> Guardar Direccion </button>
+
     </form>
-
-    {{else}} {{/if}}
-  </ul>
-</nav>
-
-{{#if currentUserInfo.isShop }}
-
-<form action="/user/changeOpen" method="post">
-  <button> Whant to change your Opening Time?</button>
-  <input type="text" name="open" id="change-open" placeholder="Ej: 08:00">
-</form>
-<form action="/user/changeClose" method="post">
-  <button> Whant to change your Closing Time?</button>
-  <input type="text" name="close" id="change-close" placeholder="Ej: 24:00">
-</form>
-<br>
-<br>
-<form action="/user/addAddress" method="post">
-  <input type="text" name="direccion" id="direccion-input" placeholder="direccion">
-  <button> Guardar Direccion </button>
-
-  <a href="/user/userFirst">Log out</a>
-</form>
+  </div>
+  {{/if}}
 </div>
-------Hola Shop------- {{/if}}
-<br>
-<br>
-<a href="/auth/logout"> Log Out </a>
+</div>
+<ul>
+  <li>
+    <a href="/user/userFirst">Vuelve a la vista del mapa</a>
+  </li>
+  <li>
+    <a href="/auth/logout"> Log Out </a>
+  </li>
+</ul>

@@ -40,7 +40,8 @@ function initMap() {
     let marker = new google.maps.Marker({
       position: use.pos,
       map: map,
-      title: use.name
+      title: use.name,
+      
     });
     marker.addListener('click', function () {
       infowindow.open(map, marker);

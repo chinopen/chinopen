@@ -1,40 +1,45 @@
-<h2> Registro </h2>
+<div class="row formulario">
+  <div class="col-md-12">
+    <h2> Registro </h2>
 
-{{#if errorMessage}}
-  <p class="error-message">
-    {{ errorMessage }}
-  </p>
-{{/if}}
+    {{#if errorMessage}}
+    <p class="error-message">
+      {{ errorMessage }}
+    </p>
+    {{/if}}
 
-<form action="/auth/signup" method="post">
-  <div>
-    {{!-- <label for="username-input"> Username </label> --}}
-    <input type="text" name="username" id="username-input"
-      placeholder="Username">
+    <form action="/auth/signup" method="post">
+      <div>
+        {{!--
+        <label for="username-input"> Username </label> --}}
+        <input type="text" name="username" id="username-input" placeholder="Username">
+      </div>
+
+      <div>
+        {{!--
+        <label for="email-input"> Email </label> --}}
+        <input type="email" name="email" id="email-input" placeholder="email">
+      </div>
+
+      <div>
+        {{!--
+        <label for="password-input"> Password </label> --}}
+        <input type="password" name="password" id="password-input" placeholder="password">
+      </div>
+      <div>
+        {{!--
+        <label for="password-input"> Password </label> --}}
+        <input type="checkbox" name="shop" id="shop-input" value="true"> ¿Eres una tienda?
+      </div>
+
+      <button class="crea"> Crea tu cuenta </button>
+    </form>
   </div>
-
-  <div>
-    {{!-- <label for="email-input"> Email </label> --}}
-    <input type="email" name="email" id="email-input"
-      placeholder="email">
-  </div>
-
-  <div>
-    {{!-- <label for="password-input"> Password </label> --}}
-    <input type="password" name="password" id="password-input"
-      placeholder="password">
-  </div>
-  <div>
-    {{!-- <label for="password-input"> Password </label> --}}
-    <input type="checkbox" name="shop" id="shop-input" value="true"> ¿Eres una tienda?
-  </div>
-
-  <button> Crea tu cuenta </button>
-</form>
-
 <p>
   ¿Tiene ya una cuenta ?
   <a href="/auth/login">
     Inicie Sesión
   </a>
 </p>
+</div>
+

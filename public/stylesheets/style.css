@@ -2,18 +2,75 @@ body {
   padding: 50px;
   font-size: 18px;
   background-color: #F95F62;
-  color:#EBF95F  
+  color:rgb(249, 208, 95);
+  font-family: 'East Sea Dokdo', cursive;
+  font-size: 40px;
 }
 
 .portada {
-  margin-top: 100px;
   width: 500px;
   height: 500px;
 
 }
 
 #map {
-  height:750px; }
+  height:750px; 
+  border-radius: 20px;
+  border:10px solid rgb(249, 208, 95);
+}
+
+.sign{
+  border: 2px solid rgb(249, 208, 95);
+  text-align: center;
+  text-decoration: none;
+  background-color:rgb(249, 208, 95); 
+  border-radius: 50px;
+}
+.login{
+  text-align: center;
+}
+.imagen{
+  text-align: center;
+}
+.titulo{
+  text-align: center;
+}
+.titulo h1{
+  font-size: 100px;
+  margin-bottom: 40px
+}
+input{
+  background-color: #F95F62;
+  border:2px solid rgb(249, 208, 95);
+  border-radius:50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.formulario{
+  text-align: center;
+}
+.formulario h2 {
+  font-size: 100px
+}
+.crea{
+  background-color:rgb(249, 208, 95); 
+  border-radius: 50px;
+  color:#F95F62;
+}
+.intro{
+  text-align: center;
+  
+}
+.intro h2{
+ 
+  font-size: 50px;
+}
+.perfil{
+  text-align: right;
+}
+.icon{
+  width: 50px;
+}
 
 
-/*# sourceMappingURL=style.css.map */
+

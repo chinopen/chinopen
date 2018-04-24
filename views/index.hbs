@@ -1,6 +1,4 @@
-
-
-{{#if isUserLoggedIn }}
+ {{#if isUserLoggedIn }}
 <h1> Hello, {{ currentUserInfo.username }}. </h1>
 {{/if}}
 <nav>
@@ -10,13 +8,27 @@
       <a href="auth/logout"> Log Out </a>
     </li>
     {{else}}
-    <img class ="portada" src="/images/portada.png" alt="imagendeportada">
-    <h1> {{ title }} </h1>
-    <p>Estas buscando un Chino abierto en mitad de la noche esta es tu app</p>
-
-     <h2><a href="auth/signup"> Registrate Aquí</a></h2> 
+    <div class="row imagen">
+      <div class="col-md-12">
+        <img class="portada" src="/images/portada.png" alt="imagendeportada">
+      </div>
+    </div>
+    <div class="row titulo">
+      <div class="col-md-12">
+        <h1> {{ title }} </h1>
+        <p>Estas buscando un Chino abierto en mitad de la noche esta es tu app</p>
+      </div>
+    </div>
+    <div class="sign">
+      <h2>
+        <a href="auth/signup"> Registrate Aquí</a>
+      </h2>
+    </div>
+    <div class="login">
       <a href="auth/login"> Inicia sesion </a>
-      
+    </div>
+
+
     {{/if}}
   </ul>
 </nav>
