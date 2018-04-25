@@ -134,14 +134,15 @@ router.post("/addAddress", (req, res, next) => {
       });
     })
     .catch(error => {
-      console.log(error);
-    });
+      console.log(error)
+    })
 
-  router.get("/place/:id", (req, res, next) => {
-    user.findById(req.params.id).then(place => {
-      res.render("profile", place);
-    });
-  });
-});
-
+})
+router.get("/profile/:id",(req, res,next) => {
+  User.findById(req.params.id)
+  .then (place => {
+   res.render("user/profile", place)
+   
+  })
+})
 module.exports = router;
