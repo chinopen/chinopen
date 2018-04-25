@@ -52,6 +52,7 @@ router.post("/changeOpen", (req, res, next) => {
     res.redirect("/user/shops");
   });
 });
+
 router.get("/userFirst", (req, res, next) => {
   User.find().then(users => {
     users.forEach((user) => {
@@ -60,33 +61,38 @@ router.get("/userFirst", (req, res, next) => {
       var hours = u.getHours();
       var mins = u.getMinutes();
       var userTime = hours + ":" + mins;
-      console.log(user);
+      console.log(user.open, user.close);
+      console.log(user.open < userTime && userTime < user.close)
       if (user.open < userTime && userTime < user.close) {
         console.log("Abierto");
         let id = user._id
         const update = {
           isOpen:true
         }
-        User.findByIdAndUpdate(id,update);
+        User.findByIdAndUpdate(id,update, {new : true}).then(u=>console.log(u));
       } else {
         console.log("Cerrado");
         let id = user._id
         const update = {
           isOpen:false
         }
-        User.findByIdAndUpdate(id,update);
+        User.findByIdAndUpdate(id,update, {new : true}).then(u=>console.log(u));
       }
     });
-  });
-  User.find({
-    isCoords: true,
-    isOpen: true
-  }).then(users => {
-    console.log(users);
-    res.render("user/userFirst", {
-      users: JSON.stringify(users)
-    });
-  });
+  }).then( e=> {
+    User.find({
+      isCoords: true,
+      isOpen: true
+    }).then(users => {
+      console.log(users);
+      res.render("user/userFirst", {
+        users: JSON.stringify(users)
+      });
+    })
+  }
+    
+  )
+  
 });
 
 router.post("/changeClose", (req, res, next) => {
