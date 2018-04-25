@@ -19,12 +19,13 @@ mongoose
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         isCoords: true,
+        isOpen: false,
         loc: {
             type : "Point",
             coordinates: [40.393226, -3.697712]
         },
         open: "08:00",
-        close: "24:00"
+        close: "10:00"
       },
 
       {
@@ -33,6 +34,7 @@ mongoose
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         isCoords: true,
+        isOpen: false,
         loc: {
             type : "Point",
             coordinates: [40.404453, -3.713784]
@@ -47,6 +49,7 @@ mongoose
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         isCoords: true,
+        isOpen: false,
         loc: {
             type : "Point",
             coordinates: [40.400073,-3.705990]
@@ -61,6 +64,7 @@ mongoose
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         isCoords: true,
+        isOpen: false,
         loc: {
             type : "Point",
             coordinates: [40.397757, -3.701784]
@@ -75,6 +79,7 @@ mongoose
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         isCoords: true,
+        isOpen: false,
         loc: {
             type : "Point",
             coordinates: [40.398737, -3.699081]
@@ -88,6 +93,7 @@ mongoose
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         isCoords: true,
+        isOpen: false,
         loc: {
             type : "Point",
             coordinates: [40.397257, -3.700531]
@@ -102,6 +108,7 @@ mongoose
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         isCoords: true,
+        isOpen: false,
         loc: {
             type : "Point",
             coordinates: [40.394836, -3.709621]
@@ -115,6 +122,7 @@ mongoose
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         isCoords: true,
+        isOpen: false,
         loc: {
             type : "Point",
             coordinates: [40.392021, -3.702353]
@@ -130,6 +138,7 @@ mongoose
         password: bcrypt.hashSync("a", salt),
         isShop: true,
         isCoords: true,
+        isOpen: false,
         loc: {
             type : "Point",
             coordinates: [40.398699, -3.707353]
