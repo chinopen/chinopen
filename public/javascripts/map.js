@@ -77,7 +77,6 @@ function initMap() {
     'Error: Your browser doesn\'t support geolocation.');
 }
 /////////DIRECCIONES/////////////////
-
 var directionsDisplay = new google.maps.DirectionsRenderer({
   map: map
 });
