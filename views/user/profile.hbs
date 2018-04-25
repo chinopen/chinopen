@@ -1,13 +1,23 @@
-Welcome to {{username}}
+Welcome to {{users.username}}
 <br>
-We Open Every day from {{open}} to {{close}} no matter what!
+We Open Every day from {{users.open}} to {{users.close}} no matter what!
 <br>
 You can visit us here!
-{{loc}}
+
 
 <script type="text/javascript">
-    window.users = {{{user}}}
+    window.users = {{{userss}}}
 </script>
 <div id="map"></div>
 <script src='/javascripts/map.js' /></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSmRpGl2kaSE2_ZK-5X6OiA5942IFepI&callback=initMap"></script>
+
+
+<ul>
+  <li>
+    <a href="/user/userFirst">Vuelve a la vista del mapa</a>
+  </li>
+  <li>
+    <a href="/auth/logout"> Log Out </a>
+  </li>
+</ul>
