@@ -10,6 +10,8 @@ body {
 .portada {
   width: 500px;
   height: 500px;
+  border: 10px solid rgb(249, 208, 95);
+  border-radius: 40px;
 
 }
 
@@ -25,9 +27,13 @@ body {
   text-decoration: none;
   background-color:rgb(249, 208, 95); 
   border-radius: 50px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 25px;
 }
 .login{
   text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 25px;
 }
 .imagen{
   text-align: center;
@@ -36,7 +42,7 @@ body {
   text-align: center;
 }
 .titulo h1{
-  font-size: 100px;
+  font-size: 150px;
   margin-bottom: 40px
 }
 input{
@@ -48,9 +54,13 @@ input{
 }
 .formulario{
   text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size:30px;
+  
 }
-.formulario h2 {
-  font-size: 100px
+.tituloform {
+  font-size: 100px;
+  font-family: 'East Sea Dokdo', cursive;
 }
 .crea{
   background-color:rgb(249, 208, 95); 
@@ -59,11 +69,10 @@ input{
 }
 .intro{
   text-align: center;
-  
 }
 .intro h2{
- 
-  font-size: 50px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
 }
 .perfil{
   text-align: right;
@@ -71,6 +80,28 @@ input{
 .icon{
   width: 50px;
 }
+.parrafo1{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.shop{
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size:25px
+}
+.shopt{
+  font-size: 90px;
+  font-family: 'East Sea Dokdo', cursive;
+}
+.profile{
+  
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size:25px
+}
+.tienda{
+  font-size: 70px;
+  font-family: 'East Sea Dokdo', cursive;}
 
-
-
+::-webkit-input-placeholder { color:black; }
+input:focus, textarea:focus {
+  outline: none;
+}

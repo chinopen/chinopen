@@ -30,6 +30,8 @@ function initMap() {
   })
   map.fitBounds(bounds);
 
+  let pos;
+
   changedUse.forEach(use => {
     let infowindow = new google.maps.InfoWindow({
 
@@ -39,6 +41,8 @@ function initMap() {
       <a href="/user/profile/${use.id}">Ir a la tienda</a>`,
 
     })
+
+    pos1 = use.pos
 
     let marker = new google.maps.Marker({
       position: use.pos,
@@ -54,13 +58,37 @@ function initMap() {
   var infoWindow = new google.maps.InfoWindow({
     map: map
   });
-  // Try HTML5 geolocation.
+  ///////geolocation//////
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
+  /////////rutas/////////////// 
+   if (changedUse.length <= 1){ // condición para que solo realice la ruta si tiene solo 1 al que ir 
+    const directionRequest = {
+        origin: pos, // posicion del usuario
+        destination: pos1, // posicion de destino recogida en goblal para poder acceder
+        travelMode: 'WALKING'
+      };
+      
+      directionsService.route(
+        directionRequest,
+        function (response, status) {
+          if (status === 'OK') {
+            // everything is ok
+            directionsDisplay.setDirections(response);
+    
+          } else {
+            // something went wrong
+            window.alert('Directions request failed due to ' + status);
+          }
+        }
+      );
+   }
+  
+      ///////////////position//////////////
 
       infoWindow.setPosition(pos);
       infoWindow.setContent('Usted esta Aquí');
@@ -80,25 +108,10 @@ function initMap() {
       'Error: Your browser doesn\'t support geolocation.');
   }
   //// hacer las direcciones ///
-  var directionsDisplay = new google.maps.DirectionsRenderer({
-    map: map
-  });
 
-  // Set destination, origin and travel mode.
-  var request = {
-    destination: madrid,
-    origin: pos,
-    travelMode: 'WALKING'
-  };
+  const directionsService = new google.maps.DirectionsService;
+  const directionsDisplay = new google.maps.DirectionsRenderer;
 
-  // Pass the directions request to the directions service.
-  var directionsService = new google.maps.DirectionsService();
-  directionsService.route(request, function (response, status) {
-    if (status == 'OK') {
-      // Display the route on the map.
-      directionsDisplay.setDirections(response);
-    }
-  });
-
-
+  
+  directionsDisplay.setMap(map);
 }
