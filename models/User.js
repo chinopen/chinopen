@@ -7,6 +7,7 @@ const userSchema = new Schema({
   password: String,
   isShop: { type: Boolean, default: false },
   isCoords: { type: Boolean, default: false },
+  isOpen: { type: Boolean, default: false },
   loc: { type: {type: String }, coordinates: [Number]},
   open: { type: String, default: null },
   close: { type: String, default: null }
