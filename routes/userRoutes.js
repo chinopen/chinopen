@@ -134,7 +134,6 @@ router.post("/addAddress", (req, res, next) => {
       });
     })
     .catch(error => {
-<<<<<<< HEAD
       console.log(error)
     })
 
@@ -146,27 +145,4 @@ router.get("/profile/:id",(req, res,next) => {
    
   })
 })
-
-
-
-// router.get("/profile/:id",(req, res,next) => {
-//   User.findById(req.params.id)
-//   .then (place => {
-//     console.log(place)
-//    res.render("profile", {place})
-  
-//   })
-//  })
-=======
-      console.log(error);
-    });
-
-  router.get("/place/:id", (req, res, next) => {
-    user.findById(req.params.id).then(place => {
-      res.render("profile", place);
-    });
-  });
-});
->>>>>>> fc7761fdbef6dab9f0a95cde27c58f0d636b6f4f
-
 module.exports = router;
