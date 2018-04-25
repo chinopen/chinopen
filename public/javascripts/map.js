@@ -33,10 +33,13 @@ function initMap() {
   changedUse.forEach(use => {
     let infowindow = new google.maps.InfoWindow({
 
-      content: `<h3>${use.name}</h3><br><p>Open:${use.open}</p><br><p>Close:${use.close}</p><br><a href="place/${use.id}">Ir a la tienda</a>`,
+      content: `<h3>${use.name}</h3><br>
+      <p>Open:${use.open}</p><br>
+      <p>Close:${use.close}</p><br>
+      <a href="/user/profile/${use.id}">Ir a la tienda</a>`,
 
     })
-    console.log(use)
+    
     let marker = new google.maps.Marker({
       position: use.pos,
       map: map,
@@ -48,6 +51,7 @@ function initMap() {
     });
   })
 
+  var infoWindow = new google.maps.InfoWindow({map: map});
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -57,7 +61,7 @@ function initMap() {
       };
 
       infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
+      infoWindow.setContent('Usted esta Aquí');
       map.setCenter(pos);
     }, function () {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -66,14 +70,35 @@ function initMap() {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
   }
-
-
-}
-
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
     'Error: The Geolocation service failed.' :
     'Error: Your browser doesn\'t support geolocation.');
 }
+/////////DIRECCIONES/////////////////
+
+var directionsDisplay = new google.maps.DirectionsRenderer({
+  map: map
+});
+
+// Set destination, origin and travel mode.
+var request = {
+  destination: madrid ,
+  origin: pos,
+  travelMode: 'WALKING'
+};
+
+// Pass the directions request to the directions service.
+var directionsService = new google.maps.DirectionsService();
+directionsService.route(request, function(response, status) {
+  if (status == 'OK') {
+    // Display the route on the map.
+    directionsDisplay.setDirections(response);
+  }
+});
+
+
+}
+
+

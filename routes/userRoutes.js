@@ -109,23 +109,24 @@ router.post("/addAddress", (req, res, next) => {
       console.log(error)
     })
 
-router.get("/place/:id",(req, res,next) => {
-  user.findById(req.params.id)
+})
+router.get("/profile/:id",(req, res,next) => {
+  User.findById(req.params.id)
   .then (place => {
-   res.render("profile", place)
+   res.render("user/profile", place)
    
   })
 })
 
 
-})
 
-router.get("/place/:id",(req, res,next) => {
-  user.findById(req.params.id)
-  .then (place => {
-   res.render("profile", place)
+// router.get("/profile/:id",(req, res,next) => {
+//   User.findById(req.params.id)
+//   .then (place => {
+//     console.log(place)
+//    res.render("profile", {place})
   
-  })
- })
+//   })
+//  })
 
 module.exports = router;
