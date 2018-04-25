@@ -10,7 +10,8 @@ const userSchema = new Schema({
   isOpen: { type: Boolean, default: false },
   loc: { type: {type: String }, coordinates: [Number]},
   open: { type: String, default: null },
-  close: { type: String, default: null }
+  close: { type: String, default: null },
+  // ranking: number
 });
 
 userSchema.index({ location: "2dsphere" });

@@ -84,7 +84,6 @@ router.get("/userFirst", (req, res, next) => {
       isCoords: true,
       isOpen: true
     }).then(users => {
-      console.log(users);
       res.render("user/userFirst", {
         users: JSON.stringify(users)
       });
@@ -138,11 +137,14 @@ router.post("/addAddress", (req, res, next) => {
     })
 
 })
-router.get("/profile/:id",(req, res,next) => {
+router.get("/profile/:id",(req, res,next) => { 
   User.findById(req.params.id)
-  .then (place => {
-   res.render("user/profile", place)
-   
+  .then (users => {
+    console.log(users)
+   res.render("user/profile", {
+    userss: JSON.stringify([users]),
+    users
+  })
   })
 })
 module.exports = router;
