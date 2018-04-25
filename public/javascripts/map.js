@@ -21,7 +21,8 @@ function initMap() {
       },
       open: use.open,
       id: use._id,
-      close: use.close
+      close: use.close,
+      ranking: use.ranking,
 
     }
     //console.log(use.username)
@@ -31,11 +32,13 @@ function initMap() {
   map.fitBounds(bounds);
 
   changedUse.forEach(use => {
+    console.log(use.ranking, use.ranking.length);
     let infowindow = new google.maps.InfoWindow({
-
-      content: `<h3>${use.name}</h3><br>
-      <p>Open:${use.open}</p><br>
-      <p>Close:${use.close}</p><br>
+      
+      content: `<h3>${use.name}</h3>
+      <p>Rating: ${(use.ranking.reduce((e,t)=>e+t)/use.ranking.length).toFixed(1)}</p>
+      <p>Open:${use.open}</p>
+      <p>Close:${use.close}</p>
       <a href="/user/profile/${use.id}">Ir a la tienda</a>`,
 
     })

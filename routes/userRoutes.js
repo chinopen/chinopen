@@ -69,14 +69,14 @@ router.get("/userFirst", (req, res, next) => {
         const update = {
           isOpen:true
         }
-        User.findByIdAndUpdate(id,update, {new : true}).then(u=>console.log(u));
+        User.findByIdAndUpdate(id,update, {new : true}).then(u=>u);
       } else {
         console.log("Cerrado");
         let id = user._id
         const update = {
           isOpen:false
         }
-        User.findByIdAndUpdate(id,update, {new : true}).then(u=>console.log(u));
+        User.findByIdAndUpdate(id,update, {new : true}).then(u=>u);
       }
     });
   }).then( e=> {
@@ -140,11 +140,23 @@ router.post("/addAddress", (req, res, next) => {
 router.get("/profile/:id",(req, res,next) => { 
   User.findById(req.params.id)
   .then (users => {
-    console.log(users)
    res.render("user/profile", {
     userss: JSON.stringify([users]),
     users
   })
   })
 })
+
+router.post("/ranking/:id", (req, res, next) => {
+  const userId = req.params.id;
+  const value = req.body.optradio;
+  User.findById(userId)
+  .then(user => {
+    let ranking = user.ranking.unshift(+value)
+    const update = {ranking:ranking}
+    user.save().then((u)=>console.log(u))
+    res.redirect(`/user/profile/${userId}`);
+  });
+});
+
 module.exports = router;

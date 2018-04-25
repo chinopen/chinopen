@@ -2,6 +2,28 @@ Welcome to {{users.username}}
 <br>
 We Open Every day from {{users.open}} to {{users.close}} no matter what!
 <br>
+Rate this Shop
+<form action="/user/ranking/{{users.id}}" method="post">
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="1" >  *</label>
+</div>
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="2" >  **</label>
+</div>
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="3" >  ***</label>
+</div>
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="4" >  ****</label>
+</div>
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="5" >  *****</label>
+</div>
+<button class="crea"> Vote! </button>
+</form>
+
+
+
 You can visit us here!
 
 

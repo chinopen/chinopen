@@ -25,7 +25,8 @@ mongoose
             coordinates: [40.393226, -3.697712]
         },
         open: "08:00",
-        close: "10:00"
+        close: "10:00",
+        ranking: [1,1,1]
       },
 
       {
@@ -40,7 +41,8 @@ mongoose
             coordinates: [40.404453, -3.713784]
         },
         open: "08:00",
-        close: "22:00"
+        close: "22:00",
+        ranking: [4,4,3]
       },
       
       {
@@ -55,7 +57,8 @@ mongoose
             coordinates: [40.400073,-3.705990]
         },
         open: "08:00",
-        close: "23:00"
+        close: "23:00",
+        ranking: [4,3,5],
       },
       
       {
@@ -70,7 +73,8 @@ mongoose
             coordinates: [40.397757, -3.701784]
         },
         open: "08:00",
-        close: "23:00"
+        close: "23:00",
+        ranking: [2,3,4]
       },
       
       {
@@ -85,7 +89,8 @@ mongoose
             coordinates: [40.398737, -3.699081]
         },
         open: "08:00",
-        close: "24:00"
+        close: "24:00",
+        ranking: [4,3,2]
       },  
       {
         username: "Hai Zen Chiu",
@@ -99,7 +104,8 @@ mongoose
             coordinates: [40.397257, -3.700531]
         },
         open: "08:00",
-        close: "23:30"
+        close: "23:30",
+        ranking: [4,3,4]
       },
   
       {
@@ -114,7 +120,8 @@ mongoose
             coordinates: [40.394836, -3.709621]
         },
         open: "08:00",
-        close: "23:30"
+        close: "23:30",
+        ranking: [4,3,3]
       },  
       {
         username: "Vi Hct Hol",
@@ -128,7 +135,8 @@ mongoose
             coordinates: [40.392021, -3.702353]
         },
         open: "08:00",
-        close: "24:00"
+        close: "24:00",
+        ranking: [4,3,4]
       },
 
   
@@ -144,7 +152,8 @@ mongoose
             coordinates: [40.398699, -3.707353]
         },
         open: "08:00",
-        close: "22:00"
+        close: "22:00",
+        ranking: [2,3,5]
       },
 
 
