@@ -40,7 +40,6 @@
     <form action="/user/addAddress" method="post">
       <input type="text" name="direccion" id="direccion-input" placeholder="direccion">
       <button class="crea"> Guardar Direccion </button>
-
     </form>
   </div>
   {{/if}}
@@ -53,4 +52,8 @@
   <li>
     <a href="/auth/logout"> Log Out </a>
   </li>
+  <li>
+    <a href="/user/delete/{{currentUserInfo._id}}">Delete your account</a>
+      </li>
+    </form>
 </ul>

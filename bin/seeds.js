@@ -11,7 +11,6 @@ mongoose
   .then(() => {
     console.log("Connected to Mongo!"); 
     const salt = bcrypt.genSaltSync(bcryptSalt);
-    //const hashedPass = bcrypt.hashSync(password, salt);
    return User.create([
       {
         username: "Chino al lado de IH",
