@@ -8,27 +8,26 @@
       <a href="auth/logout"> Log Out </a>
     </li>
     {{else}}
-    <div class="row imagen">
-      <div class="col-md-12">
-        <img class="portada" src="/images/portada.png" alt="imagendeportada">
+    <div class="container">
+      <div class="row imagen">
+        <div class="col-ms-12">
+          <img class="portada" src="/images/portada.png" alt="imagendeportada">
+        </div>
       </div>
-    </div>
-    <div class="row titulo">
-      <div class="col-md-12">
-        <h1> {{ title }} </h1>
-        <p class="parrafo1">Estas buscando un Chino abierto en mitad de la noche, esta es tu APP</p>
+      <div class="row titulo">
+        <div class="col-ms-12">
+          <h1> {{ title }} </h1>
+          <p class="parrafo1">Estas buscando un Chino abierto en mitad de la noche, esta es tu APP</p>
+        </div>
       </div>
-    </div>
-    <div class="sign">
-      <h2>
-        <a href="auth/signup"> Registrate Aquí</a>
-      </h2>
-    </div>
-    <div class="login">
-      <a href="auth/login"> Inicia sesion </a>
+      <div class="col-ms-12 sign">
+          <a href="auth/signup"> Registrate Aquí</a>
+      </div>
+      <div class="login">
+        <a href="auth/login"> Inicia sesion </a>
+      </div>
+      {{/if}}
     </div>
 
-
-    {{/if}}
   </ul>
 </nav>

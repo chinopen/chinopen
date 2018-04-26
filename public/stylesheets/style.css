@@ -1,18 +1,18 @@
 body {
-  padding: 50px;
   font-size: 18px;
   background-color: #F95F62;
   color:rgb(249, 208, 95);
   font-family: 'East Sea Dokdo', cursive;
   font-size: 40px;
 }
-
+.container{
+  margin-right: 45px;
+}
 .portada {
-  width: 500px;
-  height: 500px;
-  border: 10px solid rgb(249, 208, 95);
-  border-radius: 40px;
-
+  margin-top:5px;
+  width: 100%;
+  border: 2px solid rgb(249, 208, 95);
+  border-radius: 20px;
 }
 
 #map {
@@ -23,27 +23,39 @@ body {
 
 .sign{
   border: 2px solid rgb(249, 208, 95);
-  text-align: center;
   text-decoration: none;
   background-color:rgb(249, 208, 95); 
   border-radius: 50px;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+.sign a{
+  color: #F95F62
 }
 .login{
-  text-align: center;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 25px;
+    border: 2px solid rgb(249, 208, 95);
+    text-decoration: none;
+    background-color:rgb(249, 208, 95); 
+    border-radius: 50px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+.login a{
+  color: #F95F62
 }
 .imagen{
   text-align: center;
 }
 .titulo{
   text-align: center;
+
 }
 .titulo h1{
-  font-size: 150px;
-  margin-bottom: 40px
+  font-size: 85px;
+  margin:0 auto;
 }
 input{
   background-color: #F95F62;
@@ -76,12 +88,14 @@ input{
 }
 .perfil{
   text-align: right;
+
 }
 .icon{
   width: 50px;
 }
 .parrafo1{
   font-family: 'Roboto Condensed', sans-serif;
+  font-size:17px
 }
 .shop{
   text-align: center;
@@ -104,4 +118,16 @@ input{
 ::-webkit-input-placeholder { color:black; }
 input:focus, textarea:focus {
   outline: none;
+}
+.chiopoen{
+  text-align: left;
+  display: inline;
+}
+.chiopoenp{
+  font-size: 150px;
+  margin-bottom: 40px
+} 
+button{
+  border:none;
+  padding:15px
 }
