@@ -159,4 +159,20 @@ router.post("/ranking/:id", (req, res, next) => {
   });
 });
 
+
+router.get("/delete/:id", (req, res, next) => {
+  const userId = req.params.id;
+  User.findByIdAndRemove(userId).then(user => {
+    req.session.destroy((err) => {
+      if (err) {
+        next(err);
+        return;
+      }
+  
+      res.redirect('/');
+    });
+  });
+});
+
+
 module.exports = router;
