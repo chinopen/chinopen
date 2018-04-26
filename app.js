@@ -77,7 +77,7 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 
 // default value for title local
-app.locals.title = "chinOpen";
+app.locals.title = "ChinOpen";
 
 const index = require("./routes/index");
 app.use("/", index);
