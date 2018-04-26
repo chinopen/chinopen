@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const salt = 10;
-const User = require("../models/user");
+const User = require("../models/User");
 const googleMapsClient = require("@google/maps").createClient({
   key: "AIzaSyDlSmRpGl2kaSE2_ZK-5X6OiA5942IFepI",
   Promise: Promise
