@@ -1,13 +1,6 @@
- {{#if isUserLoggedIn }}
-<h1> Hello, {{ currentUserInfo.username }}. </h1>
-{{/if}}
+
 <nav>
   <ul class="tottal">
-    {{#if isUserLoggedIn }}
-    <li>
-      <a href="auth/logout"> Log Out </a>
-    </li>
-    {{else}}
     <div class="container">
       <div class="row imagen">
         <div class="col-ms-12">
@@ -26,8 +19,6 @@
       <div class="login">
         <a href="auth/login"> Inicia sesion </a>
       </div>
-      {{/if}}
     </div>
-
   </ul>
 </nav>

@@ -1,4 +1,4 @@
-console.log('IronGenerator JS imported successfully!');
+
 
 function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -34,7 +34,7 @@ function initMap() {
   let pos;
 
   changedUse.forEach(use => {
-    console.log(use.ranking, use.ranking.length);
+    
     let infowindow = new google.maps.InfoWindow({
       
       content: `<h3 class="Tiendaname">${use.name}</h3>
@@ -51,6 +51,7 @@ function initMap() {
       position: use.pos,
       map: map,
       title: use.name,
+      icon:'/images/favicon.png',
 
     });
     marker.addListener('click', function () {
