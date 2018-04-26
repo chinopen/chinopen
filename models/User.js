@@ -11,7 +11,7 @@ const userSchema = new Schema({
   loc: { type: {type: String }, coordinates: [Number]},
   open: { type: String, default: null },
   close: { type: String, default: null },
-  ranking: Array,
+  ranking: {type: Array, default: [3]},
 });
 
 userSchema.index({ location: "2dsphere" });
