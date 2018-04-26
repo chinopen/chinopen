@@ -5,47 +5,39 @@
     <h1 class="shopt"> Welcome to your Profile, {{ currentUserInfo.username }}. </h1>
     {{/if}}
 
-    <nav>
-      <ul>
         {{#if isUserLoggedIn }}
-
+      <div class="profileinput">
         <form action="/user/changePass" method="post">
-          <button class="crea"> Change your Password</button>
           <input type="text" name="password" id="change-password" placeholder="New Password">
+          <button class="crea"> Change your Password</button>
         </form>
-        <br>
         <form action="/user/changeName" method="post">
-          <button class="crea"> Change your User Name</button>
           <input type="text" name="username" id="change-username" placeholder="New Username">
+          <button class="crea"> Change your User Name</button>
         </form>
-        <br>
-        </form>
-
+        
         {{else}} {{/if}}
-      </ul>
-    </nav>
 
     {{#if currentUserInfo.isShop }}
-
+    <br>
     <form action="/user/changeOpen" method="post">
-      <button class="crea"> Want to change your Opening Time?</button>
       <input type="text" name="open" id="change-open" placeholder="Ej: 08:00">
+      <button class="crea"> Want to change your Opening Time?</button>
     </form>
     <form action="/user/changeClose" method="post">
+      <input type="text" name="close" id="change-close" placeholder="Ej: 22:00">
       <button class="crea"> Want to change your Closing Time?</button>
-      <input type="text" name="close" id="change-close" placeholder="Ej: 24:00">
+      
     </form>
-    <br>
-    <br>
     <form action="/user/addAddress" method="post">
-      <input type="text" name="direccion" id="direccion-input" placeholder="direccion">
-      <button class="crea"> Guardar Direccion </button>
+     <input type="text" name="direccion" id="direccion-input" placeholder="Direccion">
+     <button class="crea"> Guardar Direccion </button> 
     </form>
   </div>
   {{/if}}
 </div>
 </div>
-<ul>
+<ul class="submenu">
   <li>
     <a href="/user/userFirst">Vuelve a la vista del mapa</a>
   </li>
@@ -54,6 +46,5 @@
   </li>
   <li>
     <a href="/user/delete/{{currentUserInfo._id}}">Delete your account</a>
-      </li>
-    </form>
+  </li>
 </ul>

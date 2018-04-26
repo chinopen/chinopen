@@ -37,11 +37,11 @@ function initMap() {
     console.log(use.ranking, use.ranking.length);
     let infowindow = new google.maps.InfoWindow({
       
-      content: `<h3>${use.name}</h3>
-      <p>Rating: ${(use.ranking.reduce((e,t)=>e+t)/use.ranking.length).toFixed(1)}</p>
-      <p>Open:${use.open}</p>
-      <p>Close:${use.close}</p>
-      <a href="/user/profile/${use.id}">Ir a la tienda</a>`,
+      content: `<h3 class="Tiendaname">${use.name}</h3>
+      <p class="ranking">Rating: ${(use.ranking.reduce((e,t)=>e+t)/use.ranking.length).toFixed(1)}</p>
+      <p class="Tienda">Open:${use.open}</p>
+      <p class="Tienda">Close:${use.close}</p>
+      <p class="ir"><a  href="/user/profile/${use.id}">Ir a la tienda</a></p>`,
 
     })
 
@@ -107,7 +107,7 @@ function initMap() {
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
-      'Error: The Geolocation service failed.' :
+      'No permitio la localizacion.' :
       'Error: Your browser doesn\'t support geolocation.');
   }
   //// hacer las direcciones ///

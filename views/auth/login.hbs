@@ -10,26 +10,22 @@
     {{/if}}
 
     <form action="/auth/login" method="post">
-      <div>
-        {{!--
-        <label for="email-input"> Email </label> --}}
+      <div class="intros">
         <input type="email" name="email" id="email-input" placeholder="Email">
       </div>
-
-      <div>
-        {{!--
-        <label for="password-input"> Password </label> --}}
+      <div class="intros">
         <input type="password" name="password" id="password-input" placeholder="Password">
       </div>
 
       <button class="crea"> Inicia Sesión </button>
+      
     </form>
 
-    <p>
+    <div class="legal">
       ¿Todavia no tienes cuenta?
       <a href="/auth/signup">
-        Registrate aqui.
+        Registrate aqui
       </a>
-    </p>
+    </div>
   </div>
 </div>

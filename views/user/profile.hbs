@@ -1,49 +1,35 @@
-<div class="row profile">
-  <div class="col-ms-12">
+<div class="centras">
 
 <p class="tienda" >Welcome to {{users.username}}</p> 
-
-<p>We Open Every day from {{users.open}} to {{users.close}} no matter what!</p>
-
-Rate this Shop
-<form action="/user/ranking/{{users.id}}" method="post">
-<div class="radio1">
-  <label><input type="radio" name="optradio" value="1" >  *</label>
-</div>
-<div class="radio1">
-  <label><input type="radio" name="optradio" value="2" >  **</label>
-</div>
-<div class="radio1">
-  <label><input type="radio" name="optradio" value="3" >  ***</label>
-</div>
-<div class="radio1">
-  <label><input type="radio" name="optradio" value="4" >  ****</label>
-</div>
-<div class="radio1">
-  <label><input type="radio" name="optradio" value="5" >  *****</label>
-</div>
-<button class="crea"> Vote! </button>
-</form>
-
-You can visit us here!
-
+<p class="horarios">We Open Every day from <b>{{users.open}}</b> to <b>{{users.close}}</b> no matter what!</p>
 <script type="text/javascript">
     window.users = {{{userss}}}
 </script>
-<div id="map"></div>
+<div id="map" class="mapapequeño"></div>
 <script src='/javascripts/map.js' /></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSmRpGl2kaSE2_ZK-5X6OiA5942IFepI&callback=initMap"></script>
-
-
-  </div>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlSmRpGl2kaSE2_ZK-5X6OiA5942IFepI&callback=initMap"></script><div class="votación">
+<p class="rate">Rate this Shop</p>
+<form action="/user/ranking/{{users.id}}" method="post">
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="1" ><span class="glyphicon glyphicon-star" aria-hidden="true"></span></label>
 </div>
-
-
-<ul>
-  <li>
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="2" ><span class="glyphicon glyphicon-star" aria-hidden="true"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></label>
+</div>
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="3" ><span class="glyphicon glyphicon-star" aria-hidden="true"><span class="glyphicon glyphicon-star" aria-hidden="true"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></span></label>
+</div>
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="4" ><span class="glyphicon glyphicon-star" aria-hidden="true"><span class="glyphicon glyphicon-star" aria-hidden="true"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span></label>
+</div>
+<div class="radio1">
+  <label><input type="radio" name="optradio" value="5" ><span class="glyphicon glyphicon-star" aria-hidden="true"><span class="glyphicon glyphicon-star" aria-hidden="true"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span></label>
+</div>
+<button class="crea2"> Vote! </button>
+</form>
+</div>
+</div>
+<ul class="submenu">
     <a href="/user/userFirst">Vuelve a la vista del mapa</a>
-  </li>
-  <li>
-    <a href="/auth/logout"> Log Out </a>
-  </li>
 </ul>
+ 

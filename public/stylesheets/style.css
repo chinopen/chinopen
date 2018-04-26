@@ -16,9 +16,11 @@ body {
 }
 
 #map {
-  height:750px; 
+  margin-top:5px;
+  width: 335px;
+  height: 500px;
   border-radius: 20px;
-  border:10px solid rgb(249, 208, 95);
+  border:1px solid rgb(249, 208, 95);
 }
 
 .sign{
@@ -41,7 +43,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 20px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 7px;
 }
 .login a{
   color: #F95F62
@@ -61,7 +63,7 @@ input{
   background-color: #F95F62;
   border:2px solid rgb(249, 208, 95);
   border-radius:50px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   text-align: center;
 }
 .formulario{
@@ -71,13 +73,16 @@ input{
   
 }
 .tituloform {
-  font-size: 100px;
+  font-size: 80px;
   font-family: 'East Sea Dokdo', cursive;
 }
 .crea{
   background-color:rgb(249, 208, 95); 
   border-radius: 50px;
   color:#F95F62;
+  font-size:18px;
+  width: 290px;
+  margin-bottom: 10px
 }
 .intro{
   text-align: center;
@@ -87,11 +92,17 @@ input{
   font-size: 30px;
 }
 .perfil{
-  text-align: right;
-
+  text-align: center;
+  border: 2px solid rgb(249, 208, 95);
+  background-color: rgb(249, 208, 95);
+  border-radius: 20px;
+  width:335px;
+  margin-top: 3px;
 }
 .icon{
-  width: 50px;
+  text-align: right;
+  width: 40px;
+  margin-bottom: 10px;
 }
 .parrafo1{
   font-family: 'Roboto Condensed', sans-serif;
@@ -103,7 +114,7 @@ input{
   font-size:25px
 }
 .shopt{
-  font-size: 90px;
+  font-size: 45px;
   font-family: 'East Sea Dokdo', cursive;
 }
 .profile{
@@ -112,10 +123,10 @@ input{
   font-size:25px
 }
 .tienda{
-  font-size: 70px;
+  font-size: 45px;
   font-family: 'East Sea Dokdo', cursive;}
 
-::-webkit-input-placeholder { color:black; }
+::-webkit-input-placeholder { color:rgb(249, 208, 95); }
 input:focus, textarea:focus {
   outline: none;
 }
@@ -129,5 +140,84 @@ input:focus, textarea:focus {
 } 
 button{
   border:none;
-  padding:15px
+  padding-left:13px;
+  padding-right:13px;
+}
+.intros{
+  font-size:17px;
+}
+.intros input{
+  height: 40px;
+  width: 250px;
+
+}
+.legal{
+  margin-top:30px;
+  font-size:14px;
+}
+.legal a {
+  color:rgb(249, 208, 95);
+  text-decoration-line: underline;
+}
+.check{
+  font-size:17px;
+}
+.Tienda{
+  color:black;
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+
+  
+}
+.Tiendaname{
+  text-align: center;
+  font-size:40px;
+  font-family: 'East Sea Dokdo', cursive;
+  color:black;
+  
+}
+.ranking{
+  color:red;
+  text-align: center;
+  font-size:20px;
+}
+.ir{
+  text-align: center;
+}
+.submenu a{
+  font-size:30px;
+  color:rgb(249, 208, 95);
+}
+.profileinput input{
+  font-size:20px;
+  width: 290px;
+}
+.votacion{
+  font-size: 20px;
+}
+.centras{
+  margin-left: 15px;
+}
+.horarios{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size:15px;
+}
+.votacion{
+  font-size:20px;
+}
+span{
+  font-size:20px;
+}
+.rate{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size:30px
+}
+.crea2{
+  background-color:rgb(249, 208, 95); 
+  border-radius: 50px;
+  color:#F95F62;
+  font-size:30px;
+  width: 290px;
+  margin-bottom: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
 }

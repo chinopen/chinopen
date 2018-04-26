@@ -8,8 +8,8 @@
       {{ errorMessage }}
     </p>
     {{/if}}
-
-    <form action="/auth/signup" method="post">
+<div class="intros">
+<form action="/auth/signup" method="post">
       <div>
         {{!--
         <label for="username-input"> Username </label> --}}
@@ -27,16 +27,16 @@
         <label for="password-input"> Password </label> --}}
         <input type="password" name="password" id="password-input" placeholder="password">
       </div>
-      <div>
-        {{!--
-        <label for="password-input"> Password </label> --}}
+      
+</div>
+      <div class="check"> 
         <input type="checkbox" name="shop" id="shop-input" value="true"> ¿Eres una tienda?
       </div>
 
       <button class="crea"> Crea tu cuenta </button>
     </form>
   </div>
-<p>
+<div class="legal">
   ¿Tiene ya una cuenta ?
   <a href="/auth/login">
     Inicie Sesión
