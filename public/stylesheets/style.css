@@ -4,7 +4,6 @@ body {
   background-color: #F95F62;
   color:rgb(249, 208, 95);
   font-family: 'East Sea Dokdo', cursive;
-  font-size: 40px;
 }
 .container{
   margin-right: 45px;
@@ -115,7 +114,7 @@ input{
   font-size:25px
 }
 .shopt{
-  font-size: 45px;
+  font-size: 35px;
   font-family: 'East Sea Dokdo', cursive;
 }
 .profile{
@@ -185,9 +184,16 @@ button{
 .ir{
   text-align: center;
 }
+.submenu{
+  padding: 0;
+}
 .submenu a{
-  font-size:30px;
+  font-size:25px;
   color:rgb(249, 208, 95);
+  font-family: 'East Sea Dokdo', cursive;
+}
+ul{
+  list-style: none;
 }
 .profileinput input{
   font-size:20px;
@@ -391,6 +397,7 @@ span{
  .submenu a{
   font-size:40px;
   color:rgb(249, 208, 95);
+  
 }
  .userfirst{
   margin-top: 20px;
