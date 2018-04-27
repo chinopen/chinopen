@@ -75,7 +75,7 @@ router.get("/userFirst", (req, res, next) => {
         console.log("Cerrado");
         let id = user._id
         const update = {
-          isOpen:false
+          isOpen:true
         }
         User.findByIdAndUpdate(id,update, {new : true}).then(u=>u);
       }
@@ -85,7 +85,6 @@ router.get("/userFirst", (req, res, next) => {
       isCoords: true,
       isOpen: true
     }).then(users => {
-      console.log(users)
       res.render("user/userFirst", {
         users: JSON.stringify(users)
       });
