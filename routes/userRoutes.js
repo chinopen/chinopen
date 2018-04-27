@@ -56,13 +56,14 @@ router.post("/changeOpen", (req, res, next) => {
 router.get("/userFirst", (req, res, next) => {
   User.find().then(users => {
     users.forEach((user) => {
-      console.log(user.username)
+      console.log(new Date())
+   
       var u = new Date();
       var hours = u.getHours();
       var mins = u.getMinutes();
       var userTime = hours + ":" + mins;
-      console.log(user.open, user.close);
-      console.log(user.open < userTime && userTime < user.close)
+      // console.log(user.open, user.close);
+      // console.log(user.open < userTime && userTime < user.close)
       if (user.open < userTime && userTime < user.close) {
         console.log("Abierto");
         let id = user._id
