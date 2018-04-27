@@ -85,6 +85,7 @@ router.get("/userFirst", (req, res, next) => {
       isCoords: true,
       isOpen: true
     }).then(users => {
+      console.log(users)
       res.render("user/userFirst", {
         users: JSON.stringify(users)
       });
