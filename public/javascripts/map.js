@@ -11,6 +11,7 @@ function initMap() {
 
   //Marks 
   let bounds = new google.maps.LatLngBounds();
+  console.log(users)
   let changedUse = window.users.map(use => {
 
     let mappeduse = {
@@ -25,16 +26,15 @@ function initMap() {
       ranking: use.ranking,
 
     }
-    //console.log(use.username)
+    console.log(use.username)
     bounds.extend(mappeduse.pos);
     return mappeduse;
   })
   map.fitBounds(bounds);
 
-  let pos;
+  let pos1;
 
   changedUse.forEach(use => {
-    
     let infowindow = new google.maps.InfoWindow({
       
       content: `<h3 class="Tiendaname">${use.name}</h3>
@@ -46,7 +46,7 @@ function initMap() {
     })
 
     pos1 = use.pos
-
+    console.log(pos1)
     let marker = new google.maps.Marker({
       position: use.pos,
       map: map,
@@ -69,6 +69,7 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
+      console.log(pos1)
   /////////rutas/////////////// 
    if (changedUse.length <= 1){ // condición para que solo realice la ruta si tiene solo 1 al que ir 
     const directionRequest = {
